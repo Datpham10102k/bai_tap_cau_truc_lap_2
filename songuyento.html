@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<label for="songuyento">Nhập số nguyên tố:</label>
+<input type="number" id="songuyento">
+<button onclick="songuyen()">OK</button>
+<div id="result">Kết quả là</div>
+
+<script>
+    function songuyen() {
+let number = parseInt(document.getElementById('songuyento').value);
+let count = 0;
+let n = 2;
+let ketqua="";
+while (count < number) {
+    if (songuyentoo(n)){
+        ketqua += n + " ";
+        count++;
+    }
+    n++
+}
+document.getElementById('result').innerHTML = ketqua;
+    }
+function songuyentoo(num) {if (num<2) return false
+for (let i = 2; i<= Math.sqrt(num); i++) {
+    if (num%i===0) return false;
+}
+return true;
+}
+
+
+
+
+</script>
+</body>
+</html>
